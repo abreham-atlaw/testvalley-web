@@ -13,7 +13,7 @@ export default abstract class AsyncHandler<E, S extends BaseState>{
 		this.viewModel = viewModel;
 	}
 
-	private extractError(value: any): Error{
+	private extractError(value: unknown): Error{
 		if(value instanceof Error){
 			return value
 		}
@@ -32,7 +32,7 @@ export default abstract class AsyncHandler<E, S extends BaseState>{
 	}
 
 
-	protected onError(state: S, error: any){
+	protected onError(state: S, error: unknown){
 		this.getAsyncState(state).status = AsyncStatus.failed;
 		this.getAsyncState(state).error = this.extractError(error);
 		this.viewModel.syncState()

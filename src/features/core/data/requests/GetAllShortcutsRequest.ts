@@ -15,8 +15,8 @@ export class GetAllShortcutsRequest extends Request<Shortcut[]>{
         })
     }
 
-    deserializeResponse(response: any): Shortcut[] {
-        return this.serializer.deserializeMany(response);
+    deserializeResponse(response: unknown): Shortcut[] {
+        return this.serializer.deserializeMany(response as Record<string, unknown>[]);
     }
 
 }

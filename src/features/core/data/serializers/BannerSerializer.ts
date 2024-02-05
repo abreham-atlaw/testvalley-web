@@ -15,7 +15,7 @@ export default class BannerSerializer extends Serializer<Banner, Record<string, 
     }
   }
 
-  serialize(_instance: Banner): Record<string, unknown> {
+  serialize(): Record<string, unknown> {
     throw new Error("Method not implemented.");
   }
 }

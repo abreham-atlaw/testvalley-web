@@ -16,8 +16,8 @@ export class GetCollectionsRequest extends Request<Collection[]>{
 
     }
 
-    deserializeResponse(response: any): Collection[] {
-        return this.serializer.deserializeMany(response["items"]);
+    deserializeResponse(response: unknown): Collection[] {
+        return this.serializer.deserializeMany(response["items"] as Record<string, unknown>[]);
     }
 
 }

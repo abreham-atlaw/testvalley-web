@@ -22,7 +22,7 @@ interface Publication {
     productName: string;
     brandName: string;
     media: Media[];
-    tagsOnImage: any[];
+    tagsOnImage: string[];
     isTrial: boolean;
     priceInfo: PriceInfo;
     applyCoupon: boolean;

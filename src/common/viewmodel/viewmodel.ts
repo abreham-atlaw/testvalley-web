@@ -1,7 +1,6 @@
 import BaseState from "../state/baseState";
 import { FunctionalAsyncHandler } from "./asyncViewModel";
-import { sleep } from "../utils/time";
-import { AsyncStatus } from "../state/asyncState";
+import { AsyncState, AsyncStatus } from "../state/asyncState";
 
 
 export default class ViewModel<S extends BaseState>{
@@ -23,7 +22,7 @@ export default class ViewModel<S extends BaseState>{
 		if(this.state.initState.status != AsyncStatus.none){
 			return;
 		}
-		let initHandler = new FunctionalAsyncHandler<BaseState>(
+		const initHandler = new FunctionalAsyncHandler<BaseState>(
 			this,
 			async () => {
 				await this.onInit()
@@ -32,7 +31,7 @@ export default class ViewModel<S extends BaseState>{
 			undefined,
 			undefined,
 			() => {
-				return this.state.initState
+				return this.state.initState as AsyncState
 			}
 		)
 		await initHandler.handle({});

@@ -14,8 +14,8 @@ export default class GetAllBannersRequest extends Request<Banner[]>{
         })
     }
 
-    deserializeResponse(response: any): Banner[] {
-        return this.serializer.deserializeMany(response);
+    deserializeResponse(response: unknown): Banner[] {
+        return this.serializer.deserializeMany(response as Record<string, unknown>[]);
     }
 
 }
