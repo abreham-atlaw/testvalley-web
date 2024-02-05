@@ -21,7 +21,7 @@ export default class ItemComponent extends React.Component<ItemComponentProps, I
                     <img src={this.props.item.publication.media[0].uri} className="w-full"></img>
                     {
                         (this.props.item.publication.tagsOnImage[0])?
-                        <div className="absolute bg-success text-light bottom-1 left-1 text-[12px] p-1"><i class="fa-solid fa-share"></i>{this.props.item.publication.tagsOnImage[0]}</div>:
+                        <div className="absolute bg-success text-light bottom-1 left-1 text-[12px] p-1"><i className="fa-solid fa-share"></i>{this.props.item.publication.tagsOnImage[0]}</div>:
                         <></>
                     }
 
