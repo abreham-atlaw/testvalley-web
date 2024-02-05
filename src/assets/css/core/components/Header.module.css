@@ -1,0 +1,7 @@
+.searchBar:focus-within {
+    border-color: var(--primary);
+}
+
+.searchBar input:focus {
+    outline: none;
+}

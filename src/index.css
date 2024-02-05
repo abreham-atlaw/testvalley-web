@@ -1,0 +1,11 @@
+:root {
+  --primary: #00d094;
+  --primaryDark: #1C1C1C;
+  --dark: #000000;
+  --light: #FFFFFF;
+  --danger: #E30000;
+  --warning: #F97700;
+  --info: #00A3FF;
+  --success: #00BC62;
+  --grey: #C6C6C6;
+}
